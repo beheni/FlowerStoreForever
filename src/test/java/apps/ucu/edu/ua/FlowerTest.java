@@ -1,4 +1,4 @@
-package flower.store;
+package apps.ucu.edu.ua;
 
 import apps.ucu.edu.ua.flower.store.Flower;
 import apps.ucu.edu.ua.flower.store.FlowerColor;
