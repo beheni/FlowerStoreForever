@@ -1,12 +1,26 @@
 package apps.ucu.edu.ua.flower.store;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 
-
+@Entity
+@Table
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Flower extends Item{
+    @Id
+    @GeneratedValue
+    private int id;
     @Getter
     private double sepalLength;
     private FlowerColor color;
@@ -19,18 +33,6 @@ public class Flower extends Item{
         return color.toString();
     }
     public String getType() { return flowerType.toString(); }
-    public Flower(double sepalLength, FlowerColor color, double price, FlowerType flowerType){
-        this.sepalLength = sepalLength;
-        this.color = color;
-        this.price = price;
-        this.flowerType = flowerType;
-    }
-    public Flower(){
-        this.sepalLength = 0;
-        this.color = null;
-        this.price = 0;
-        this.flowerType = null;
-    }
 
     @Override
     public double price() {
